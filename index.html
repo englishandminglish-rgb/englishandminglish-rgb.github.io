@@ -3,65 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English With Milena | Личный блог и преподавание</title>
+    <title>English With Milena | Сертифицированный лингвист и репетитор</title>
     <style>
-        body { font-family: 'Georgia', serif; background-color: #fcf9f5; color: #3e3327; margin: 0; padding: 0; scroll-behavior: smooth; }
-        header { background-color: #ebdcb9; padding: 35px 20px; text-align: center; border-bottom: 3px solid #d4be8d; }
-        .logo { font-size: 28px; font-weight: bold; letter-spacing: 2px; color: #4a3b2c; text-transform: uppercase; }
+        /* Викторианский винтажный стиль */
+        body { 
+            font-family: 'Georgia', serif; 
+            background-color: #f4edd9; 
+            background-image: url('https://transparenttextures.com'); /* Эффект старинной бумаги */
+            color: #2c1f11; 
+            margin: 0; 
+            padding: 0; 
+            scroll-behavior: smooth; 
+        }
         
-        /* Меню навигации */
-        nav { background: #4a3b2c; text-align: center; padding: 12px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        nav a { color: #fcf9f5; text-decoration: none; margin: 0 15px; font-size: 16px; font-weight: bold; transition: color 0.3s; }
-        nav a:hover { color: #ebdcb9; }
+        /* Обложка из Фейсбука (Атмосферный баннер) */
+        .fb-cover {
+            background: #ebdcb9 url('https://unsplash.com') no-repeat center;
+            background-size: cover;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 4px solid #8c6d48;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+        }
+        
+        .fb-cover-title {
+            background: rgba(244, 237, 217, 0.9);
+            padding: 20px 40px;
+            border: 2px solid #8c6d48;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
 
-        .hero { max-width: 800px; margin: 40px auto; text-align: center; padding: 0 20px; }
-        h1 { font-size: 32px; color: #2c1f11; }
-        h2 { border-bottom: 2px solid #d4be8d; padding-bottom: 10px; color: #2c1f11; margin-top: 50px; }
-        .subtitle { font-size: 18px; font-style: italic; color: #6e563b; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 30px 20px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 25px; }
-        .card { background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.03); border-left: 4px solid #d4be8d; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-3px); }
-        .card h3 { margin-top: 0; color: #4a3b2c; }
+        /* Круглый логотип преподавателя */
+        .profile-logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #8c6d48;
+            background: #fff;
+            margin: -80px auto 15px auto;
+            display: block;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .logo-text { font-size: 32px; font-weight: bold; letter-spacing: 2px; color: #4a3b2c; text-transform: uppercase; margin-bottom: 5px; text-shadow: 1px 1px 1px #fff; }
+        .logo-tagline { margin: 0; font-style: italic; color: #6e563b; font-size: 18px; }
         
         /* Кнопки связи */
-        .contact-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
-        .btn-contact { display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 20px; text-decoration: none; color: #fff; font-weight: bold; font-family: 'Arial', sans-serif; font-size: 14px; transition: opacity 0.2s; }
-        .btn-contact:hover { opacity: 0.9; }
-        .btn-tg { background-color: #0088cc; }
-        .btn-wa { background-color: #25d366; }
-        .phone-display { font-size: 18px; font-weight: bold; color: #4a3b2c; margin-top: 15px; display: block; }
+        .contact-buttons { display: flex; justify-content: center; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+        .btn-contact { display: inline-flex; align-items: center; padding: 10px 22px; border-radius: 4px; text-decoration: none; color: #fff; font-weight: bold; font-family: 'Arial', sans-serif; font-size: 14px; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid rgba(0,0,0,0.1); }
+        .btn-contact:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+        .btn-tg { background-color: #3a7ba2; }
+        .btn-wa { background-color: #439665; }
+        .btn-fb { background-color: #3b5998; }
+        .btn-inst { background-color: #b33939; }
+        .phone-display { font-size: 19px; font-weight: bold; color: #4a3b2c; margin-top: 15px; display: block; letter-spacing: 1px; }
         
-        /* Стили для статей и практики */
-        .article-card { background: #fff; padding: 25px; border-radius: 8px; border-top: 4px solid #4a3b2c; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
-        .date { font-size: 12px; color: #a1887f; display: block; margin-bottom: 8px; }
-        .btn-read { display: inline-block; margin-top: 15px; color: #4a3b2c; font-weight: bold; text-decoration: none; border-bottom: 1px dashed #4a3b2c; }
-        .btn-read:hover { color: #8d6e63; border-color: #8d6e63; }
-        
-        .practice-card { background: #fdfaf4; border: 1px dashed #d4be8d; padding: 20px; border-radius: 8px; }
-        .tag { background: #4a3b2c; color: #fff; padding: 3px 8px; font-size: 11px; border-radius: 3px; text-transform: uppercase; font-weight: bold; }
+        /* Меню навигации */
+        nav { background: #4a3b2c; text-align: center; padding: 14px 0; position: sticky; top: 0; z-index: 1000; border-top: 2px solid #8c6d48; border-bottom: 2px solid #8c6d48; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        nav a { color: #fdfaf4; text-decoration: none; margin: 0 20px; font-size: 16px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: #ebdcb9; }
 
-        .review-card { background: #f5ebd6; padding: 20px; border-radius: 8px; font-style: italic; }
-        .author { font-style: normal; font-weight: bold; margin-top: 10px; display: block; text-align: right; color: #6e563b; }
+        /* Контент и викторианские рамки */
+        .container { max-width: 950px; margin: 0 auto; padding: 30px 20px; background: rgba(253, 250, 244, 0.6); border-left: 1px solid #d4be8d; border-right: 1px solid #d4be8d; box-shadow: 0 0 20px rgba(0,0,0,0.03); }
         
-        footer { background: #3e3327; color: #fff; text-align: center; padding: 40px 20px; margin-top: 60px; }
-        footer a { color: #ebdcb9; text-decoration: none; font-weight: bold; }
-        .footer-contacts { margin-top: 15px; font-family: 'Arial', sans-serif; font-size: 15px; line-height: 1.6; }
+        .about-section { display: flex; gap: 30px; align-items: center; margin-top: 30px; flex-wrap: wrap; }
+        /* Фотография Милены Александровны */
+        .profile-photo { width: 220px; height: 220px; border-radius: 50%; border: 5px solid #8c6d48; object-fit: cover; box-shadow: 0 6px 12px rgba(0,0,0,0.1); flex-shrink: 0; margin: 0 auto; }
+        .about-text { flex: 1; min-w-width: 280px; font-size: 17px; line-height: 1.7; }
+
+        h1 { font-size: 34px; color: #2c1f11; text-align: center; margin-top: 10px; }
+        h2 { border-bottom: 2px solid #8c6d48; padding-bottom: 12px; color: #4a3b2c; margin-top: 50px; text-align: center; font-size: 26px; font-weight: normal; letter-spacing: 1px; }
+        .subtitle { font-size: 18px; font-style: italic; color: #6e563b; text-align: center; margin-bottom: 30px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        
+        /* Винтажные карточки */
+        .card { background: #fff; padding: 25px; border-radius: 2px; box-shadow: 0 4px 8px rgba(0,0,0,0.04); border: 1px solid #d4be8d; border-top: 4px solid #8c6d48; transition: transform 0.2s; position: relative; }
+        .card::after { content: "❦"; position: absolute; bottom: 5px; right: 10px; color: #d4be8d; font-size: 14px; }
+        .card h3 { margin-top: 0; color: #4a3b2c; font-size: 20px; border-bottom: 1px dashed #ebdcb9; padding-bottom: 5px; }
+        .card p, .card li { font-size: 15px; line-height: 1.6; }
+
+        /* Блок практики и опроса */
+        .quiz-option { background: #fdfaf4; border: 1px solid #d4be8d; padding: 12px 15px; margin: 8px 0; border-radius: 4px; font-size: 15px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; gap: 10px; }
+        .quiz-option:hover { background: #f5ebd6; border-color: #8c6d48; }
+        .quiz-number { background: #4a3b2c; color: #fff; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; }
+
+        .review-card { background: #f5ebd6 url('https://transparenttextures.com'); padding: 25px; border-radius: 4px; font-style: italic; border: 1px solid #d4be8d; box-shadow: 0 4px 6px rgba(0,0,0,0.02); line-height: 1.6; }
+        .author { font-style: normal; font-weight: bold; margin-top: 15px; display: block; text-align: right; color: #4a3b2c; font-size: 15px; }
+        
+        footer { background: #3e3327 url('https://transparenttextures.com'); color: #fcf9f5; text-align: center; padding: 45px 20px; margin-top: 70px; border-top: 4px solid #8c6d48; }
+        footer a { color: #ebdcb9; text-decoration: none; font-weight: bold; border-bottom: 1px dotted #ebdcb9; }
+        footer a:hover { color: #fff; border-bottom-style: solid; }
+        .footer-contacts { margin-top: 20px; font-family: 'Arial', sans-serif; font-size: 15px; line-height: 1.7; letter-spacing: 0.5px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">English With Milena</div>
-        <p style="margin: 5px 0 0 0; font-style: italic;">Язык • Уверенность • Новые горизонты</p>
-        
-        <!-- Блок быстрых контактов в шапке -->
-        <div class="contact-buttons">
-            <a href="https://t.me" target="_blank" class="btn-contact btn-head btn-tg">Написать в Telegram</a>
-            <a href="https://wa.me" target="_blank" class="btn-contact btn-head btn-wa">Написать в WhatsApp</a>
+    <!-- Обложка из Фейсбука (Биг-Бен / Лондон) -->
+    <div class="fb-cover">
+        <div class="fb-cover-title">
+            <span style="font-size: 14px; letter-spacing: 4px; uppercase; color: #6e563b; display: block; margin-bottom: 5px;">📍 October Literary Calendar</span>
+            <span style="font-size: 28px; font-weight: bold; color: #2c1f11; font-family: 'Georgia', serif;">Good stories stay with us</span>
         </div>
-        <span class="phone-display">📞 +7 (918) 431-05-75</span>
+    </div>
+
+    <header>
+        <!-- Круглый Логотип -->
+        <div class="profile-logo" style="background-image: url('https://unsplash.com'); background-size: cover;"></div>
+        <div class="logo-text">English With Milena</div>
+        <div class="logo-tagline">Certified Linguist & Tutor • Личный блог и преподавание</div>
+        
+        <div class="contact-buttons">
+            <a href="http://t.me/EnglishAndMinglish" target="_blank" class="btn-contact btn-tg">Telegram</a>
+            <a href="https://wa.me/79951695746" target="_blank" class="btn-contact btn-wa">WhatsApp</a>
+            <a href="https://www.facebook.com/EnlishWithMilena/" target="_blank" class="btn-contact btn-fb">Facebook</a>
+            <a href="https://www.instagram.com/englishwithmilena_?" target="_blank" class="btn-contact btn-inst">Instagram</a>
+        </div>
+        <span class="phone-display">📞 +7 (995) 169-57-46</span>
     </header>
 
     <nav>
@@ -72,93 +137,14 @@
         <a href="#reviews">Отзывы</a>
     </nav>
 
-    <div class="hero" id="about">
-        <h1>Вы всё понимаете по-английски. Но почему так трудно заговорить?</h1>
-        <p class="subtitle">Перешагните языковой барьер и начните говорить уверенно. Индивидуальный подход от лингвиста и преподавателя Милены Александровны.</p>
-    </div>
-
     <div class="container">
         
-        <!-- Направления -->
-        <h2 id="services">Для каких целей мы учим язык?</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>General English</h3>
-                <p>Разговорный английский язык для уверенной жизни, общения и свободных путешествий по всему миру.</p>
-            </div>
-            <div class="card">
-                <h3>Business English & ESP</h3>
-                <p>Профессиональный английский для специалистов в IT, маркетинге, медицине. Построение успешной карьеры.</p>
-            </div>
-            <div class="card">
-                <h3>Target Preparation</h3>
-                <p>Целевая подготовка к международным собеседованиям, важным бизнес-встречам и презентациям.</p>
-            </div>
-        </div>
-
-        <!-- Раздел для СТАТЕЙ -->
-        <h2 id="blog">Полезные статьи и заметки</h2>
-        <p class="subtitle">Делюсь мыслями, методиками и личным опытом преодоления языкового барьера.</p>
-        <div class="grid">
-            <div class="article-card">
-                <span class="date">09 октября, 2026</span>
-                <h3>Как перестать «учить» правила и начать чувствовать язык?</h3>
-                <p>Почему классическая зубрежка времен из школьных учебников не работает в реальной жизни? Разбираем метод естественного погружения через речевые конструкции...</p>
-                <a href="#" class="btn-read">Читать статью полностью →</a>
-            </div>
-            <div class="article-card">
-                <span class="date">05 октября, 2026</span>
-                <h3>Английский для IT: гайд по выживанию на созвонах</h3>
-                <p>Краткие советы, как уверенно чувствовать себя во время звонков с иностранными коллегами. Топ-15 фраз, которые выручат в любой рабочей ситуации.</p>
-                <a href="#" class="btn-read">Читать статью полностью →</a>
-            </div>
-        </div>
-
-        <!-- Раздел для ПРАКТИКИ -->
-        <h2 id="practice">Практика и материалы для учеников</h2>
-        <p class="subtitle">Интерактивные чек-листы, шпаргалки и домашние задания для самостоятельной тренировки.</p>
-        <div class="grid">
-            <div class="practice-card">
-                <span class="tag">Чек-лист</span>
-                <h3 style="margin: 10px 0 5px 0; color: #4a3b2c;">Разговорный барьер: 5 шагов к свободной речи</h3>
-                <p style="font-size: 14px;">Практическое руководство с упражнениями для ежедневной тренировки речи дома перед зеркалом.</p>
-                <a href="#" class="btn-read">Открыть PDF-версию</a>
-            </div>
-            <div class="practice-card">
-                <span class="tag">Упражнение</span>
-                <h3 style="margin: 10px 0 5px 0; color: #4a3b2c;">Аудирование: Слушаем и разбираем интервью</h3>
-                <p style="font-size: 14px;">Интерактивный разбор беглой речи носителей языка на примере современных подкастов и книг.</p>
-                <a href="#" class="btn-read">Начать практику</a>
-            </div>
-        </div>
-
-        <!-- Отзывы -->
-        <h2 id="reviews" style="margin-top: 50px;">Что говорят ученики</h2>
-        <div class="grid">
-            <div class="review-card">
-                <p>"У неё очень крутой уровень английского, на любой вопрос сразу даёт чёткий ответ. Милена быстро поняла, что я из тех, кто учит язык как ребёнок — через запоминание конструкций, а не заучивание правил."</p>
-                <span class="author">— Мария (Рейтинг 5.0)</span>
-            </div>
-            <div class="review-card">
-                <p>"Каждый урок мы много разговариваем. Милена придумывает отличные дополнительные упражнения. Когда я сказала, что читаю книгу, она предложила внедрить её в наши упражнения!"</p>
-                <span class="author">— Юлия (Рейтинг 5.0)</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Подвал сайта с контактами -->
-    <footer>
-        <p style="font-size: 20px; margin-bottom: 10px; font-weight: bold;">Записаться на бесплатную консультацию:</p>
-        <div class="contact-buttons">
-            <a href="https://t.me" target="_blank" class="btn-contact btn-tg">Telegram</a>
-            <a href="https://wa.me" target="_blank" class="btn-contact btn-wa">WhatsApp</a>
-        </div>
-        <div class="footer-contacts">
-            Телефон: <strong>+7 (918) 431-05-75</strong><br>
-            Email: <a href="mailto:englishandminglish@gmail.com">englishandminglish@gmail.com</a>
-        </div>
-        <p style="margin-top: 30px; font-size: 13px; opacity: 0.7;">© 2026 English With Milena. Эксперт современных цифровых методик.</p>
-    </footer>
-
-</body>
-</html>
+        <!-- Обо мне с Вашим фото -->
+        <div class="about-section" id="about">
+            <!-- Здесь автоматически отобразится красивое фото-заглушка, вы легко смените её на своё -->
+            <img src="https://unsplash.com" class="profile-photo" alt="Милена Александровна">
+            <div class="about-text">
+                <h1>Вы всё понимаете по-английски.<br>Но почему так трудно заговорить?</h1>
+                <p>Вы читаете тексты, узнаёте знакомые слова, смотрите видео и в целом понимаете английскую речь. Но стоит кому-то обратиться к вам на английском — и вдруг становится трудно подобрать слова. Знакомая ситуация?</p>
+                <p>Вы знаете больше, чем можете сказать. В голове возникает мысль на русском, вы пытаетесь перевести её на английский, вспоминаете грамматику, проверяете себя… А разговор уже движется дальше. Так появляется ощущение, что вы знаете английский, но пользоваться им пока не получается.</p>
+                <p><strong>Чтобы заговорить, недостаточно знать слова и правила.</strong> Нужно научиться быстро находить нужные слова и конструкции и использовать их в живой речи. И этому можно учиться!</p>
