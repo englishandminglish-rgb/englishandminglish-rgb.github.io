@@ -8,127 +8,145 @@
         body { 
             font-family: 'Georgia', serif; 
             background-color: #f4edd9; 
-            background-image: url('https://transparenttextures.com'); 
+            background-image: url('main-background.png'); 
+            background-attachment: fixed;
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
             color: #2c1f11; 
             margin: 0; 
             padding: 0; 
             scroll-behavior: smooth; 
         }
         
-        /* Атмосферный баннер из вашего файла обложка.jpg */
         .fb-cover {
-            background: #ebdcb9 url('обложка.jpg') no-repeat center;
+            background: #ebdcb9 url('hero-banner.png') no-repeat center;
             background-size: cover;
-            height: 320px;
-            display: flex;
+            height: 380px;
+            border-bottom: 3px solid #8c6d48;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        header { text-align: center; padding: 20px 20px 30px 20px; }
+        
+        .logo-text { 
+            font-size: 34px; 
+            font-weight: bold; 
+            letter-spacing: 2px; 
+            color: #2c1f11; 
+            text-transform: uppercase; 
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        .logo-tagline { margin: 0; font-style: italic; color: #5c4033; font-size: 19px; }
+        
+        .contact-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
+        .btn-contact { 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            padding: 12px 24px; 
+            border-radius: 30px; 
+            text-decoration: none; 
+            color: #fdfaf4; 
+            font-weight: bold; 
+            font-family: 'Georgia', serif;
+            font-size: 14px; 
+            background-color: #2d4a43; 
+            border: 2px solid #d4be8d; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        .btn-contact:hover { 
+            background-color: #1e332e; 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+            border-color: #ebdcb9;
+        }
+        
+        .btn-main-consult {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 4px solid #8c6d48;
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
+            padding: 15px 40px;
+            background-color: #2d4a43;
+            color: #fdfaf4;
+            font-family: 'Georgia', serif;
+            font-size: 19px;
+            font-style: italic;
+            text-decoration: none;
+            border: 2px solid #d4be8d;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 20px auto;
+            transition: all 0.3s;
         }
-        
-        .fb-cover-title {
-            background: rgba(253, 250, 244, 0.93);
-            padding: 25px 40px;
-            border: 2px solid #8c6d48;
-            border-radius: 2px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            max-width: 80%;
+        .btn-main-consult:hover {
+            background-color: #1e332e;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
-        header { text-align: center; padding: 30px 20px; }
+        .phone-display { font-size: 21px; font-weight: bold; color: #2d4a43; margin-top: 20px; display: block; letter-spacing: 1px; }
         
-        /* Роскошный круглый логотип из вашего файла логотип.jpg */
-        .profile-logo {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid #8c6d48;
-            background: #fff url('логотип.jpg') no-repeat center;
-            background-size: cover;
-            margin: -110px auto 15px auto;
-            display: block;
-            position: relative;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            z-index: 10;
-        }
-        
-        .logo-text { font-size: 32px; font-weight: bold; letter-spacing: 2px; color: #4a3b2c; text-transform: uppercase; margin-bottom: 5px; }
-        .logo-tagline { margin: 0; font-style: italic; color: #6e563b; font-size: 18px; }
-        
-        .contact-buttons { display: flex; justify-content: center; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
-        .btn-contact { display: inline-flex; align-items: center; padding: 10px 22px; border-radius: 4px; text-decoration: none; color: #fff; font-weight: bold; font-family: 'Arial', sans-serif; font-size: 14px; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid rgba(0,0,0,0.1); }
-        .btn-contact:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
-        .btn-tg { background-color: #3a7ba2; }
-        .btn-wa { background-color: #439665; }
-        .btn-fb { background-color: #3b5998; }
-        .btn-inst { background-color: #b33939; }
-        .phone-display { font-size: 19px; font-weight: bold; color: #4a3b2c; margin-top: 15px; display: block; letter-spacing: 1px; }
-        
-        nav { background: #4a3b2c; text-align: center; padding: 14px 0; position: sticky; top: 0; z-index: 1000; border-top: 2px solid #8c6d48; border-bottom: 2px solid #8c6d48; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        nav a { color: #fdfaf4; text-decoration: none; margin: 0 20px; font-size: 16px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s; }
+        nav { background: #2d4a43; text-align: center; padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-top: 2px solid #d4be8d; border-bottom: 2px solid #d4be8d; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        nav a { color: #fdfaf4; text-decoration: none; margin: 0 18px; font-size: 16px; font-weight: bold; letter-spacing: 1px; transition: color 0.3s; }
         nav a:hover { color: #ebdcb9; }
 
-        .container { max-width: 950px; margin: 0 auto; padding: 30px 20px; background: rgba(253, 250, 244, 0.85); border-left: 1px solid #d4be8d; border-right: 1px solid #d4be8d; box-shadow: 0 0 20px rgba(0,0,0,0.03); }
+        .container { max-width: 900px; margin: 40px auto; padding: 40px 35px; background: rgba(253, 250, 244, 0.94); border: 1px solid #d4be8d; box-shadow: 0 0 30px rgba(0,0,0,0.15); border-radius: 4px; }
         
-        .about-section { display: flex; gap: 40px; align-items: flex-start; margin-top: 30px; flex-wrap: wrap; }
+        .about-section { display: flex; gap: 40px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
         
-        /* Ваше фото photo_2026-10-06_12-08-54.jpg */
         .profile-photo { 
-            width: 240px; 
-            height: 240px; 
+            width: 250px; 
+            height: 250px; 
             border-radius: 50%; 
-            border: 5px solid #8c6d48; 
+            border: 4px solid #d4be8d; 
             object-fit: cover; 
-            box-shadow: 0 6px 15px rgba(0,0,0,0.12); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
             flex-shrink: 0; 
             margin: 0 auto; 
         }
-        .about-text { flex: 1; min-width: 280px; font-size: 17px; line-height: 1.7; text-align: justify; }
+        .about-text { flex: 1; min-width: 280px; font-size: 17px; line-height: 1.75; text-align: justify; }
 
-        h1 { font-size: 34px; color: #2c1f11; text-align: center; margin-top: 10px; font-weight: normal; }
-        h2 { border-bottom: 2px solid #8c6d48; padding-bottom: 12px; color: #4a3b2c; margin-top: 50px; text-align: center; font-size: 26px; font-weight: normal; letter-spacing: 1px; }
+        h1 { font-size: 34px; color: #2c1f11; text-align: center; margin-top: 10px; font-weight: normal; line-height: 1.3; }
+        h2 { border-bottom: 2px solid #d4be8d; padding-bottom: 12px; color: #2d4a43; margin-top: 50px; text-align: center; font-size: 26px; font-weight: normal; letter-spacing: 1px; }
         .subtitle { font-size: 18px; font-style: italic; color: #6e563b; text-align: center; margin-bottom: 30px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-top: 30px; }
         
-        .card { background: #fff; padding: 25px; border-radius: 2px; box-shadow: 0 4px 8px rgba(0,0,0,0.04); border: 1px solid #d4be8d; border-top: 4px solid #8c6d48; transition: transform 0.2s; position: relative; }
+        .card { background: #fff; padding: 25px; border-radius: 3px; box-shadow: 0 4px 10px rgba(0,0,0,0.04); border: 1px solid #d4be8d; border-top: 4px solid #2d4a43; transition: transform 0.2s; position: relative; }
         .card::after { content: "❦"; position: absolute; bottom: 5px; right: 10px; color: #d4be8d; font-size: 14px; }
-        .card h3 { margin-top: 0; color: #4a3b2c; font-size: 20px; border-bottom: 1px dashed #ebdcb9; padding-bottom: 5px; }
-        .card p { font-size: 15px; line-height: 1.6; }
+        .card h3 { margin-top: 0; color: #2d4a43; font-size: 20px; border-bottom: 1px dashed #ebdcb9; padding-bottom: 5px; }
+        .card p { font-size: 15px; line-height: 1.6; margin-bottom: 5px; }
 
-        .quiz-option { background: #fdfaf4; border: 1px solid #d4be8d; padding: 12px 15px; margin: 8px 0; border-radius: 4px; font-size: 15px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; gap: 10px; }
-        .quiz-option:hover { background: #f5ebd6; border-color: #8c6d48; }
-        .quiz-number { background: #4a3b2c; color: #fff; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; }
+        .quiz-option { background: #fdfaf4; border: 1px solid #d4be8d; padding: 14px 18px; margin: 10px 0; border-radius: 4px; font-size: 16px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 15px; }
+        .quiz-option:hover { background: #ebdcb9; border-color: #2d4a43; transform: translateX(5px); }
+        .quiz-number { background: #2d4a43; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; border: 1px solid #d4be8d; }
 
-        .review-card { background: #f5ebd6; padding: 25px; border-radius: 4px; font-style: italic; border: 1px solid #d4be8d; box-shadow: 0 4px 6px rgba(0,0,0,0.02); line-height: 1.6; }
-        .author { font-style: normal; font-weight: bold; margin-top: 15px; display: block; text-align: right; color: #4a3b2c; font-size: 15px; }
+        .review-card { background: #fdfaf4; padding: 25px; border-radius: 4px; font-style: italic; border: 1px solid #d4be8d; box-shadow: 0 4px 6px rgba(0,0,0,0.02); line-height: 1.65; }
+        .author { font-style: normal; font-weight: bold; margin-top: 15px; display: block; text-align: right; color: #2d4a43; font-size: 15px; }
         
-        footer { background: #3e3327; color: #fcf9f5; text-align: center; padding: 45px 20px; margin-top: 70px; border-top: 4px solid #8c6d48; }
+        footer { background: #1e332e; color: #fcf9f5; text-align: center; padding: 50px 20px; margin-top: 80px; border-top: 4px solid #d4be8d; }
         footer a { color: #ebdcb9; text-decoration: none; font-weight: bold; border-bottom: 1px dotted #ebdcb9; }
-        .footer-contacts { margin-top: 20px; font-family: 'Arial', sans-serif; font-size: 15px; line-height: 1.7; }
+        footer a:hover { color: #fff; border-bottom-style: solid; }
+        .footer-contacts { margin-top: 25px; font-family: 'Georgia', serif; font-size: 16px; line-height: 1.8; }
     </style>
 </head>
 <body>
 
-    <div class="fb-cover">
-        <div class="fb-cover-title">
-            <span style="font-size: 13px; letter-spacing: 4px; color: #6e563b; display: block; margin-bottom: 5px; text-transform: uppercase;">📖 October Literary Calendar</span>
-            <span style="font-size: 26px; font-weight: bold; color: #2c1f11;">Good stories stay with us</span>
-        </div>
-    </div>
+    <div class="fb-cover"></div>
 
     <header>
-        <div class="profile-logo"></div>
         <div class="logo-text">English With Milena</div>
         <div class="logo-tagline">Certified Linguist & Tutor • Личный блог и преподавание</div>
         
         <div class="contact-buttons">
-            <a href="http://t.me" target="_blank" class="btn-contact btn-tg">Telegram</a>
-            <a href="https://wa.me" target="_blank" class="btn-contact btn-wa">WhatsApp</a>
-            <a href="https://facebook.com" target="_blank" class="btn-contact btn-fb">Facebook</a>
-            <a href="https://instagram.com_?" target="_blank" class="btn-contact btn-inst">Instagram</a>
+            <a href="https://t.me" target="_blank" class="btn-contact">Telegram</a>
+            <a href="https://wa.me" target="_blank" class="btn-contact">WhatsApp</a>
+            <a href="https://facebook.com" target="_blank" class="btn-contact">Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="btn-contact">Instagram</a>
+            <a href="https://threads.net_" target="_blank" class="btn-contact">Threads</a>
         </div>
         <span class="phone-display">📞 +7 (995) 169-57-46</span>
     </header>
@@ -143,22 +161,27 @@
 
     <div class="container">
         
-        <div class="about-section" id="about">
-            <img src="photo_2026-10-06_12-08-54.jpg" class="profile-photo" alt="Милена Александровна">
-            <div class="about-text">
-                <h1>Вы всё понимаете по-английски.<br>Но почему так трудно заговорить?</h1>
-                <p>Вы читаете тексты, узнаёте знакомые слова, смотрите видео и в целом понимаете английскую речь. Но стоит кому-то обратиться к вам на английском — и вдруг становится трудно подобрать слова. Знакомая ситуация?</p>
-                <p>Вы знаете больше, чем можете сказать. В голове возникает мысль на русском, вы пытаетесь перевести её на английский, вспоминаете грамматику, проверяете себя… А разговор уже движется дальше. Так появляется ощущение, что вы знаете английский, но пользоваться им пока не получается.</p>
-                <p><strong>Чтобы заговорить, недостаточно знать слова и правила.</strong> Нужно научиться быстро находить нужные слова и конструкции и использовать их в живой речи. И этому можно учиться!</p>
-                <p>Я — <strong>Милена Александровна</strong>, преподаватель английского языка и лингвист. Окончила Кубанский государственный университет по направлению «Фундаментальная и прикладная лингвистика». В 2026 году прошла профессиональную переподготовку по современным цифровым и EdTech-методикам преподавания. С 2021 года постоянно работаю в международной онлайн-школе Skyeng (мой рейтинг — 5.0).</p>
-            </div>
+        <!-- Карточка-Визитка -->
+        <div class="card" style="border-top-color: #2d4a43; margin-bottom: 40px; padding: 30px;">
+            <h2 style="margin-top: 0; color: #2d4a43; font-size: 24px; border-bottom: 2px solid #d4be8d; padding-bottom: 10px; text-align: left;">🇬🇧 Английский язык с Миленой | Индивидуальные занятия 📖</h2>
+            <p style="font-size: 17px; line-height: 1.7;">Здравствуйте! Спасибо за обращение.</p>
+            <p style="font-size: 17px; line-height: 1.7;">Я дипломированный лингвист (КубГУ) со стажем более 5 лет и опытом работы в Skyeng. Помогаю заговорить на английском без зубрежки, адаптируя программу под ваши цели: от свободного общения в путешествиях до бизнес-переговоров.</p>
+            
+            <h3 style="font-size: 18px; margin-top: 25px; color: #2d4a43;">💻 Формат работы:</h3>
+            <ul style="font-size: 16px; line-height: 1.7; padding-left: 20px;">
+                <li>Онлайн на удобной вам платформе (Google Meet, Zoom, Контур.Толк, Яндекс.Телемост и др.)</li>
+                <li>Длительность урока — 60 минут</li>
+                <li>Все интерактивные материалы я предоставляю бесплатно</li>
+            </ul>
+
+            <h3 style="font-size: 18px; margin-top: 25px; color: #2d4a43;">👉 Мой подход:</h3>
+            <p style="font-size: 16px; line-height: 1.7;">Минимум шаблонов, глубокое понимание логики языка и фокус на практику с первого урока.</p>
+            
+            <h3 style="font-size: 18px; margin-top: 25px; color: #2d4a43;">🚀 Готовы начать?</h3>
+            <p style="font-size: 16px; line-height: 1.7; font-style: italic;">Напишите мне ваш текущий уровень и цель обучения. Мы подберём время для вводного тестирования и построим ваш личный трек к свободной речи!</p>
         </div>
 
-        <h2 id="services">Направления обучения</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>General English</h3>
-                <p>Разговорный английский для жизни, свободных путешествий, релокации и уверенного общения с людьми из любых стран без страха ошибок.</p>
-            </div>
-            <div class="card">
-                <h3>Business English & ESP</h3>
+        <div style="text-align: center; margin-top: 20px; margin-bottom: 40px;">
+            <a href="https://t.me" target="_blank" class="btn-main-consult">✉ Записаться на тестирование ❯</a>
+        </div>
+
